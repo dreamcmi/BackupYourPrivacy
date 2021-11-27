@@ -1,0 +1,4 @@
+build/
+.idea/
+ex.toml
+go.sum

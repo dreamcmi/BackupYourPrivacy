@@ -1,0 +1,5 @@
+[Oss]
+EndPoint = "https://oss-cn-shanghai.aliyuncs.com"
+AccessKeyID = ""
+AccessKeySecret = ""
+Bucket = ""
