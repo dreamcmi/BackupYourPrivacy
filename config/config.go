@@ -15,8 +15,7 @@ type Config struct {
 	Oss ossInfo
 }
 
-func InitConfig() (cgg Config, err error) {
-	var cg Config
+func InitConfig() (cg Config, err error) {
 	_, err = toml.DecodeFile("./config.toml", &cg)
 	return cg, err
 }
