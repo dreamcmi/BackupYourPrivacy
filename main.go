@@ -2,6 +2,7 @@ package main
 
 import (
 	"BackupYourPrivacy/config"
+	"BackupYourPrivacy/sql"
 	"fmt"
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
 )
@@ -13,8 +14,13 @@ func perr(err error) {
 }
 
 func main() {
+	var err error
+
 	cg := config.Config{}
-	cg, err := config.InitConfig()
+	cg, err = config.InitConfig()
+	perr(err)
+
+	err = sql.InitSql()
 	perr(err)
 
 	client, err := oss.New(cg.Oss.EndPoint, cg.Oss.AccessKeyID, cg.Oss.AccessKeySecret)
